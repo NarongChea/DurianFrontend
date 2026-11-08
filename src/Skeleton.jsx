@@ -3,7 +3,6 @@ import { LangCtx } from './i18n'
 
 export const Sk = ({ className = '', style }) => <div className={'sk ' + className} style={style} />
 
-// Shows a friendly note if the server takes longer than 5 seconds (Render free plan wakes up slowly)
 function Wake() {
   const { t } = useContext(LangCtx)
   const [slow, setSlow] = useState(false)
@@ -64,7 +63,6 @@ export function ReportsSkeleton() {
   )
 }
 
-// Used by App.jsx while the first data (trees, categories, types) is loading
 export function PageSkeleton({ page }) {
   if (page === 'dash') return <DashboardSkeleton />
   if (page === 'reports') return <ReportsSkeleton />

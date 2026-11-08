@@ -1,5 +1,6 @@
 import { useState, useEffect, useContext } from 'react'
 import { api } from './api'
+import { TableRows } from './Skeleton'
 import { LangCtx } from './i18n'
 import { E, KINDS, ICON, MONEY, money, num } from './config'
 
@@ -78,7 +79,7 @@ export default function Crud({ name, refs, reload }) {
     </div>}
 
     <div className="card">
-            {rows === null ? <TableRows />
+      {rows === null ? <TableRows />
         : !shown.length ? <p className="p-8 text-center text-lg text-mu">🌱 {t('empty')}</p>
         : <table className="rt w-full"><thead><tr>{F.map(f => <th key={f[0]} className="th">{t(f[0])}</th>)}<th /></tr></thead>
           <tbody>{shown.map(r => <tr key={r.id}>

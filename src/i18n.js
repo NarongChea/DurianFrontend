@@ -44,5 +44,23 @@ Object.assign(T.km, {
   e_otp_expired: 'កូដផុតកំណត់។ សូមផ្ញើកូដថ្មី។', e_weak: 'ពាក្យសម្ងាត់ខ្សោយពេក', e_wait: 'សូមរង់ចាំ ១ នាទី មុនសុំម្តងទៀត',
   e_old_wrong: 'ពាក្យសម្ងាត់បច្ចុប្បន្នមិនត្រឹមត្រូវ', e_mail_fail: 'មិនអាចផ្ញើអ៊ីមែលបានទេ',
 })
-Object.assign(T.en, { waking: 'Server is waking up, please wait up to a minute...' })
-Object.assign(T.km, { waking: 'ម៉ាស៊ីនបម្រើកំពុងភ្ញាក់ សូមរង់ចាំរហូតដល់ ១ នាទី...' })
+Object.assign(T.en, {
+  waking: 'Server is waking up, please wait up to a minute...',
+  sort: 'Sort', s_asc: 'Number 1 → 9', s_desc: 'Number 9 → 1', s_new: 'Newest added', s_note: 'With note first',
+  how_many: 'How many trees to add?', add_trees: 'Add trees', stat_last: 'Last number', stat_gaps: 'Missing numbers',
+  gaps_title: 'Missing numbers found', gaps_text: 'These numbers are empty. Fill them first? Tap a number to select or unselect.',
+  will_add: 'Will add', fill_sel: 'Yes, fill the selected numbers', no_cont: 'No, continue from', select_all: 'Select all',
+  pw_title: 'Enter your password to continue', confirm: 'Confirm', del_tree: 'Delete tree',
+  del_warn: 'This tree will be removed and its number becomes empty.', added: 'Added',
+  e_pw_wrong: 'Wrong password', e_count: 'Enter a number from 1 to 500',
+})
+Object.assign(T.km, {
+  waking: 'ម៉ាស៊ីនបម្រើកំពុងភ្ញាក់ សូមរង់ចាំរហូតដល់ ១ នាទី...',
+  sort: 'តម្រៀប', s_asc: 'លេខ តូច → ធំ', s_desc: 'លេខ ធំ → តូច', s_new: 'បន្ថែមថ្មីៗ', s_note: 'មានកំណត់ចំណាំមុន',
+  how_many: 'បន្ថែមប៉ុន្មានដើម?', add_trees: 'បន្ថែមដើមទុរេន', stat_last: 'លេខចុងក្រោយ', stat_gaps: 'លេខដែលបាត់',
+  gaps_title: 'រកឃើញលេខដែលបាត់', gaps_text: 'លេខទាំងនេះទំនេរ។ ចង់បំពេញមុនទេ? ចុចលើលេខ ដើម្បីជ្រើស ឬលុបការជ្រើស។',
+  will_add: 'នឹងបន្ថែម', fill_sel: 'បាទ/ចាស បំពេញលេខដែលបានជ្រើស', no_cont: 'ទេ បន្តពីលេខ', select_all: 'ជ្រើសរើសទាំងអស់',
+  pw_title: 'បញ្ចូលពាក្យសម្ងាត់ ដើម្បីបន្ត', confirm: 'បញ្ជាក់', del_tree: 'លុបដើមទុរេន',
+  del_warn: 'ដើមនេះនឹងត្រូវលុប ហើយលេខរបស់វានឹងទំនេរ។', added: 'បានបន្ថែម',
+  e_pw_wrong: 'ពាក្យសម្ងាត់មិនត្រឹមត្រូវ', e_count: 'បញ្ចូលលេខពី ១ ដល់ ៥០០',
+})
