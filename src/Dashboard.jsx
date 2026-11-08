@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import { api } from './api'
 import { LangCtx } from './i18n'
 import { money } from './config'
-
+import { DashboardSkeleton } from './Skeleton'
 export default function Dashboard({ refs }) {
   const { t } = useContext(LangCtx)
   const [d, setD] = useState(null)
@@ -10,7 +10,7 @@ export default function Dashboard({ refs }) {
     Promise.all([api('/report/spending?period=month'), api('/report/fruit'), api('/price'), api('/logs')])
       .then(([sp, fr, pr, lg]) => setD({ sp, fr, pr, lg }))
   }, [])
-  if (!d) return <p className="text-mu">...</p>
+    if (!d) return <DashboardSkeleton />
   const { sp, fr, pr, lg } = d
   const total = sp.rows.reduce((a, r) => a + r.total, 0)
   const cur = sp.rows.find(r => r.p === new Date().toISOString().slice(0, 7))?.total || 0

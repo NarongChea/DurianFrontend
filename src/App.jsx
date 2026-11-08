@@ -7,6 +7,7 @@ import Dashboard from './Dashboard'
 import Reports from './Reports'
 import Login from './Login'
 import Settings from './Settings'
+import { PageSkeleton } from './Skeleton'
 
 const SIZES = [17, 20, 24]
 
@@ -88,7 +89,7 @@ export default function App() {
                 <code className="mx-auto my-4 block max-w-sm rounded-2xl bg-bg p-3 text-left text-base">cd backend<br />uvicorn main:app --reload --port 8000</code>
                 <button className="btn-p" onClick={reload}>{t('retry')}</button>
               </div>
-            ) : !refs ? <p className="text-mu">...</p>
+                    ) : !refs ? <PageSkeleton page={page} />
             : page === 'dash' ? <Dashboard key={page} refs={refs} />
             : page === 'reports' ? <Reports key={page} />
             : <Crud key={page} name={page} refs={refs} reload={reload} />}

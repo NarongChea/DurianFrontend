@@ -44,3 +44,5 @@ Object.assign(T.km, {
   e_otp_expired: 'កូដផុតកំណត់។ សូមផ្ញើកូដថ្មី។', e_weak: 'ពាក្យសម្ងាត់ខ្សោយពេក', e_wait: 'សូមរង់ចាំ ១ នាទី មុនសុំម្តងទៀត',
   e_old_wrong: 'ពាក្យសម្ងាត់បច្ចុប្បន្នមិនត្រឹមត្រូវ', e_mail_fail: 'មិនអាចផ្ញើអ៊ីមែលបានទេ',
 })
+Object.assign(T.en, { waking: 'Server is waking up, please wait up to a minute...' })
+Object.assign(T.km, { waking: 'ម៉ាស៊ីនបម្រើកំពុងភ្ញាក់ សូមរង់ចាំរហូតដល់ ១ នាទី...' })

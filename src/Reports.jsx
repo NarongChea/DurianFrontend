@@ -2,7 +2,7 @@ import { useState, useEffect, useContext } from 'react'
 import { api } from './api'
 import { LangCtx } from './i18n'
 import { money, num } from './config'
-
+import { ReportsSkeleton } from './Skeleton'
 export default function Reports() {
   const { t } = useContext(LangCtx)
   const [period, setPeriod] = useState('day')
@@ -11,7 +11,7 @@ export default function Reports() {
   const [price, setPrice] = useState(0)
   useEffect(() => { api('/report/spending?period=' + period).then(setSp) }, [period])
   useEffect(() => { api('/report/fruit').then(setFr); api('/price').then(r => setPrice(r.price)) }, [])
-  if (!sp || !fr) return <p className="text-mu">...</p>
+    if (!sp || !fr) return <ReportsSkeleton />
   const Stat = ({ k, children }) => <div className="card !mb-0">
     <div className="text-base text-mu">{t(k)}</div><div className="text-3xl font-bold text-brand">{children}</div></div>
 
