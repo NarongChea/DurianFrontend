@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #f3f7f1; --card: #ffffff; --fg: #112016; --mu: #4a5a4f; --line: #d6e0d7;
+  --brand: #1b7a3a; --onbrand: #ffffff; --hero1: #14632f; --hero2: #4c9a2a;
+}
+.dark {
+  --bg: #0c1410; --card: #15201a; --fg: #eef6ef; --mu: #a9bbae; --line: #273830;
+  --brand: #4ade80; --onbrand: #052e14; --hero1: #0f3d22; --hero2: #1f6b34;
+}
+@theme inline {
+  --color-bg: var(--bg); --color-card: var(--card); --color-fg: var(--fg); --color-mu: var(--mu);
+  --color-line: var(--line); --color-brand: var(--brand); --color-onbrand: var(--onbrand);
+}
+
+html { font-size: 20px; color-scheme: light; }
+html.dark { color-scheme: dark; }
+body {
+  font-family: Inter, "Noto Sans Khmer", system-ui, sans-serif;
+  background: var(--bg); color: var(--fg); -webkit-text-size-adjust: 100%;
+}
+
+@layer components {
+  .card { @apply bg-card border border-line rounded-3xl shadow-sm p-4 mb-4 overflow-x-auto; }
+  .inp { @apply w-full min-h-12 rounded-2xl border-2 border-line bg-card text-fg px-4 py-2 text-base outline-none focus:border-brand; }
+  .btn { @apply min-h-12 rounded-2xl border-2 border-line bg-card px-4 py-2 text-base font-semibold cursor-pointer hover:border-brand; }
+  .btn-p { @apply min-h-12 rounded-2xl bg-brand text-onbrand px-5 py-2 text-base font-bold cursor-pointer hover:opacity-90; }
+  .ibtn { @apply min-h-11 min-w-11 rounded-xl border-2 border-line bg-card px-2 font-bold cursor-pointer; }
+  .th { @apply p-3 text-left text-sm font-semibold uppercase tracking-wide text-mu; }
+  .td { @apply p-3 border-t border-line text-base; }
+  .bdg { @apply rounded-full px-3 py-1 text-sm font-semibold;
+    background: color-mix(in srgb, var(--c) 22%, transparent);
+    color: color-mix(in srgb, var(--c) 65%, var(--fg)); }
+  .hero { background: linear-gradient(135deg, var(--hero1), var(--hero2)); color: #fff; }
+}
+.k-fertilizer { --c: #0ea5e9; } .k-sick { --c: #ef4444; }
+.k-flower { --c: #ec4899; }     .k-fruit { --c: #f59e0b; }
+
+/* tables become cards on phones */
+@media (max-width: 767px) {
+  .rt thead { display: none; }
+  .rt, .rt tbody, .rt tr { display: block; width: 100%; }
+  .rt tr { border: 2px solid var(--line); border-radius: 1.25rem; padding: .5rem .9rem; margin-bottom: .8rem; }
+  .rt td { display: flex; justify-content: space-between; align-items: center; gap: 1rem; border: 0; padding: .45rem 0; text-align: right; }
+  .rt td::before { content: attr(data-label); color: var(--mu); font-weight: 600; text-align: left; }
+}
